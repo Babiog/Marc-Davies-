@@ -45,6 +45,18 @@ html, body { height: 100%; width: 100%; overflow: hidden; font-family: 'DM Sans'
 .about-body p + p { margin-top: 0.8rem; }
 .close-btn { margin-top: 2rem; display: inline-flex; align-items: center; gap: 6px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); cursor: pointer; border: none; background: none; transition: color 0.2s; }
 .close-btn:hover { color: #fff; }
+.back-btn { display: inline-block; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); cursor: pointer; margin-bottom: 1.5rem; }
+.back-btn:hover { color: #fff; }
+.footer { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.15); font-size: 10px; color: rgba(255,255,255,0.4); line-height: 2; }
+.policy-link { color: rgba(255,255,255,0.5); cursor: pointer; text-decoration: underline; }
+.policy-link:hover { color: #fff; }
+.policy-panel { position: fixed; inset: 0; z-index: 20; background: rgba(20,30,25,0.97); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.5s ease; }
+.policy-panel.open { opacity: 1; pointer-events: all; }
+.policy-inner { max-width: 580px; width: 90%; padding: 3rem; }
+.policy-inner h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 1.8rem; color: #fff; margin-bottom: 1.5rem; }
+.policy-inner p { font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 1rem; }
+.policy-back { display: inline-block; margin-top: 1.5rem; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); cursor: pointer; border: none; background: none; }
+.policy-back:hover { color: #fff; }
 @keyframes fadeUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @media (max-width: 560px) {
@@ -117,10 +129,43 @@ html, body { height: 100%; width: 100%; overflow: hidden; font-family: 'DM Sans'
         <p>Nid technoleg er mwyn technoleg. Technoleg sy'n gweithio ochr yn ochr â'r bobl sy'n ei defnyddio ac er budd y bobl hynny.</p>
       </div>
     </div>
-    <button class="close-btn" id="cta-btn" onclick="document.getElementById('about').classList.remove('open')">The first step is a conversation, let's chat</button>
+    <a class="back-btn" onclick="document.getElementById('about').classList.remove('open')">← Back</a>
+<button class="close-btn" id="cta-btn" onclick="document.getElementById('about').classList.remove('open')">The first step is a conversation, let's chat</button>
+    <div class="footer">
+      <p>Marc Davies trading as Cwm-Ni Cyf &nbsp;|&nbsp; Company No. 13361762</p>
+      <p>Pantlleuci, Cilrhedyn, Llanfyrnach, Wales, SA35 0AA</p>
+      <p>
+        <a class="policy-link" onclick="showPolicy('privacy')">Privacy Policy</a>
+        &nbsp;|&nbsp;
+        <a class="policy-link" onclick="showPolicy('cookie')">Cookie Policy</a>
+      </p>
+    </div>
   </div>
 </div>
 <script>
+<div class="policy-panel" id="policy">
+  <div class="policy-inner">
+    <div id="privacy-content">
+      <h3>Privacy Policy</h3>
+      <p>Any personal data you share by contacting me (name, email) will only be used to respond to your enquiry. It will not be shared with third parties.</p>
+      <p>You can request deletion at any time by emailing marcldavies@gmail.com</p>
+      <p>Marc Davies trading as Cwm-Ni Cyf, Company No. 13361762, Pantlleuci, Cilrhedyn, Llanfyrnach, Wales, SA35 0AA</p>
+    </div>
+    <div id="cookie-content" style="display:none">
+      <h3>Cookie Policy</h3>
+      <p>This website does not use cookies or any tracking technology.</p>
+      <p>No personal data is collected when you visit this site.</p>
+    </div>
+    <button class="policy-back" onclick="document.getElementById('policy').classList.remove('open')">← Back</button>
+  </div>
+</div>
+
+<script>
+function showPolicy(type) {
+  document.getElementById('privacy-content').style.display = type === 'privacy' ? 'block' : 'none';
+  document.getElementById('cookie-content').style.display = type === 'cookie' ? 'block' : 'none';
+  document.getElementById('policy').classList.add('open');
+}
 function showLang(lang, btn) {
   document.querySelectorAll('.about-text').forEach(el => el.classList.remove('visible'));
   document.getElementById('about-' + lang).classList.add('visible');
