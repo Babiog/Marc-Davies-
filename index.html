@@ -31,7 +31,7 @@ html, body { height: 100%; width: 100%; overflow: hidden; font-family: 'DM Sans'
 .cymru { position: absolute; bottom: 1.5rem; right: 2rem; font-family: 'Cormorant Garamond', serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); writing-mode: vertical-rl; z-index: 2; opacity: 0; animation: fadeIn 1.2s ease forwards 1.2s; }
 .about-panel { position: fixed; inset: 0; z-index: 10; background: rgba(20,30,25,0.93); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.5s ease; }
 .about-panel.open { opacity: 1; pointer-events: all; }
-.about-inner { max-width: 580px; width: 90%; padding: 3rem; transform: translateY(20px); transition: transform 0.5s ease; }
+.about-inner { max-width: 580px; width: 90%; padding: 3rem; transform: translateY(20px); transition: transform 0.5s ease; max-height: 90vh; overflow-y: auto; }
 .about-panel.open .about-inner { transform: translateY(0); }
 .lang-toggle { display: flex; margin-bottom: 2rem; }
 .lang-btn { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; padding: 6px 16px; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: rgba(255,255,255,0.5); cursor: pointer; transition: all 0.2s; }
