@@ -178,17 +178,6 @@ function showLang(lang, btn) {
       : "The first step is a conversation, let's chat";
   }
 }
-  document.querySelectorAll('.about-text').forEach(el => el.classList.remove('visible'));
-  document.getElementById('about-' + lang).classList.add('visible');
-  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  var ctaBtn = document.getElementById('cta-btn');
-  if (ctaBtn) {
-    ctaBtn.textContent = lang === 'cy'
-      ? "Y cam cyntaf yw sgwrs, cysylltwch â fi heddiw"
-      : "The first step is a conversation, let's chat";
-  }
-}
 </script>
 </body>
 </html>
