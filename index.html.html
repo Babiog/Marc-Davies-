@@ -1,0 +1,56 @@
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+<div class="scene">
+  <div class="flipper" id="flipper">
+    <div class="face front">
+      <div class="card">
+        <div class="content">
+          <p class="eyebrow">Digital &amp; Transformation Consultant</p>
+          <h1 class="name">Marc<span>Davies</span></h1>
+          <div class="divider"></div>
+          <p class="positioning">Modern Workplace Development</p>
+          <p class="strapline"><span>Clear thinking</span><span>Practical ideas</span><span>Real progress</span></p>
+          <p class="sub-positioning">Supporting technology adoption &amp; transformation across Wales's third sector</p>
+          <div class="links">
+            <a class="link" href="mailto:marcldavies@gmail.com"><span class="link-dot"></span>marcldavies@gmail.com</a>
+            <a class="link" href="https://www.linkedin.com/in/marc-davies-07766501904/" target="_blank"><span class="link-dot"></span>LinkedIn</a>
+            <a class="link" href="#"><span class="link-dot"></span>Book a call</a>
+            <button class="about-trigger" onclick="document.getElementById('flipper').classList.add('flipped')"><span class="link-dot" style="background:var(--accent-light)"></span>About</button>
+          </div>
+        </div>
+        <div class="photo-col">
+          <img class="landscape" src="https://i.imgur.com/placeholder.jpg" alt="Pembrokeshire landscape">
+          <div class="headshot"><img src="https://i.imgur.com/placeholder2.jpg" alt="Marc Davies"></div>
+          <span class="cymru">Cymru &nbsp; Wales</span>
+        </div>
+      </div>
+    </div>
+    <div class="face back">
+      <div class="about-panel">
+        <div class="about-content">
+          <div class="lang-toggle">
+            <button class="lang-btn active" onclick="showLang('en', this)">English</button>
+            <button class="lang-btn" onclick="showLang('cy', this)">Cymraeg</button>
+          </div>
+          <div class="about-text visible" id="about-en">
+            <p class="about-label">About</p>
+            <h2 class="about-heading">Helping you shape ideas, find clarity and make real progress.</h2>
+            <div class="about-body">
+              <p>I work with charities, housing associations, and third sector organisations across Wales to cut through the complexity of technology change — and establish a clear, practical route for improvement.</p>
+              <p>Not technology for its own sake. Technology that works for the people using it.</p>
+            </div>
+          </div>
+          <div class="about-text" id="about-cy">
+            <p class="about-label">Amdanaf</p>
+            <h2 class="about-heading">Eich helpu i lunio syniadau, dod o hyd i eglurder a gwneud cynnydd go iawn.</h2>
+            <div class="about-body">
+              <p>Rwy'n gweithio gydag elusennau, cymdeithasau tai, a sefydliadau trydydd sector ledled Cymru i dorri drwy gymhlethdod newid technolegol — a sefydlu llwybr clir, ymarferol ar gyfer gwella.</p>
+              <p>Nid technoleg er mwyn technoleg. Technoleg sy'n gweithio i'r bobl sy'n ei defnyddio.</p>
+            </div>
+          </div>
+          <button class="back-trigger" onclick="document.getElementById('flipper').classList.remove('flipped')">← Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
