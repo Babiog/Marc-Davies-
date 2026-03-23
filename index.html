@@ -4,70 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marc Davies</title>
+<meta name="msvalidate.01" content="3CFE6DD487C60BF6E128274B35406CF1" />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; width: 100%; overflow: hidden; font-family: 'DM Sans', sans-serif; }
-.card { width: 100vw; height: 100vh; position: relative; display: flex; align-items: center; overflow: hidden; }
-.bg { position: absolute; inset: 0; background-size: cover; background-position: center 30%; z-index: 0; }
-.bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.5) 100%); }
-.content { position: relative; z-index: 2; display: flex; flex-direction: row; align-items: center; padding: clamp(2rem, 6vw, 5rem); gap: clamp(1.5rem, 4vw, 4rem); width: 100%; }
-.photo { flex-shrink: 0; width: clamp(120px, 16vw, 220px); height: clamp(144px, 19vw, 264px); border-radius: 6px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.35); opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
-.photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-.text { flex: 1; min-width: 0; }
-.eyebrow { font-size: clamp(9px, 1.2vw, 12px); letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-bottom: clamp(0.5rem, 1.5vw, 1rem); opacity: 0; animation: fadeUp 0.7s ease forwards 0.3s; }
-.name { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2.8rem, 7vw, 6.5rem); line-height: 0.9; letter-spacing: -0.02em; color: #ffffff; text-shadow: 0 2px 12px rgba(0,0,0,0.3); margin-bottom: clamp(0.8rem, 2vw, 1.5rem); opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s; }
-.divider { width: 450px; height: 1px; background: rgba(255,255,255,0.5); margin-bottom: clamp(0.8rem, 2vw, 1.5rem); opacity: 0; animation: fadeUp 0.6s ease forwards 0.55s; }
-.positioning { font-family: 'Cormorant Garamond', serif; font-size: clamp(1rem, 2.2vw, 1.5rem); font-weight: 300; color: rgba(255,255,255,0.9); margin-bottom: 0.3rem; opacity: 0; animation: fadeUp 0.7s ease forwards 0.65s; }
-.strapline { font-size: clamp(11px, 1.3vw, 14px); color: rgba(255,255,255,0.75); letter-spacing: 0.06em; margin-bottom: clamp(1.5rem, 3vw, 2.5rem); opacity: 0; animation: fadeUp 0.7s ease forwards 0.75s; }
-.strapline .sep { margin: 0 0.4em; opacity: 0.5; }
-.icons { display: flex; gap: clamp(1rem, 2.5vw, 2rem); align-items: center; opacity: 0; animation: fadeUp 0.7s ease forwards 0.9s; }
-.icon-link { display: flex; flex-direction: column; align-items: center; gap: 5px; text-decoration: none; color: rgba(255,255,255,0.9); transition: all 0.2s ease; }
-.icon-link:hover { color: #ffffff; transform: translateY(-2px); }
-.icon-link svg { width: clamp(22px, 3vw, 32px); height: clamp(22px, 3vw, 32px); fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-.icon-label { font-size: clamp(9px, 1vw, 11px); letter-spacing: 0.1em; text-transform: uppercase; }
-.about-btn { font-size: clamp(10px, 1.1vw, 12px); letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.35); padding: 8px 18px; cursor: pointer; transition: all 0.22s ease; opacity: 0; animation: fadeUp 0.7s ease forwards 1s; }
-.about-btn:hover { background: rgba(255,255,255,0.22); color: #fff; }
-.cymru { position: absolute; bottom: 1.5rem; right: 2rem; font-family: 'Cormorant Garamond', serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); writing-mode: vertical-rl; z-index: 2; opacity: 0; animation: fadeIn 1.2s ease forwards 1.2s; }
-.about-panel { position: fixed; inset: 0; z-index: 10; background: rgba(20,30,25,0.93); backdrop-filter: blur(8px); display: flex; align-items: flex-start; justify-content: center; overflow-y: auto; opacity: 0; pointer-events: none; transition: opacity 0.5s ease; }
-.about-panel.open { opacity: 1; pointer-events: all; }
-.about-inner { max-width: 580px; width: 90%; padding: 2rem; transform: translateY(20px); transition: transform 0.5s ease; }
-.about-panel.open .about-inner { transform: translateY(0); }
-.lang-toggle { display: flex; margin-bottom: 2rem; }
-.lang-btn { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; padding: 6px 16px; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: rgba(255,255,255,0.5); cursor: pointer; transition: all 0.2s; }
-.lang-btn:first-child { border-right: none; }
-.lang-btn.active { background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.4); }
-.about-text { display: none; }
-.about-text.visible { display: block; }
-.about-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
-.about-heading { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.4rem, 3.5vw, 2.2rem); color: #fff; line-height: 1.2; margin-bottom: 1.2rem; }
-.about-body { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.8; font-weight: 300; }
-.about-body p + p { margin-top: 0.8rem; }
-.close-btn { margin-top: 2rem; display: inline-flex; align-items: center; gap: 6px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); cursor: pointer; border: none; background: none; transition: color 0.2s; }
-.close-btn:hover { color: #fff; }
-.back-btn { display: inline-block; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); cursor: pointer; margin-bottom: 1.5rem; }
-.back-btn:hover { color: #fff; }
-.footer { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.15); font-size: 10px; color: rgba(255,255,255,0.4); line-height: 2; }
-.policy-link { color: rgba(255,255,255,0.5); cursor: pointer; text-decoration: underline; }
-.policy-link:hover { color: #fff; }
-.policy-panel { position: fixed; inset: 0; z-index: 20; background: rgba(20,30,25,0.97); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.5s ease; }
-.policy-panel.open { opacity: 1; pointer-events: all; }
-.policy-inner { max-width: 580px; width: 90%; padding: 3rem; }
-.policy-inner h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 1.8rem; color: #fff; margin-bottom: 1.5rem; }
-.policy-inner p { font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 1rem; }
-.policy-back { display: inline-block; margin-top: 1.5rem; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); cursor: pointer; border: none; background: none; }
-.policy-back:hover { color: #fff; }
-@keyframes fadeUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@media (max-width: 560px) {
-  .content { flex-direction: column; align-items: flex-start; padding: 2rem 1.5rem; gap: 1.5rem; }
-  .photo { width: 100px; height: 120px; }
-  .about-btn { margin-left: 0; }
-  .cymru { display: none; }
-  .strapline .sep { display: none; }
-  .strapline span { display: block; }
-}
-</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -102,9 +40,7 @@ html, body { height: 100%; width: 100%; overflow: hidden; font-family: 'DM Sans'
     "Independent Project Review",
     "Digital Troubleshooting",
     "Funded Project Delivery",
-    "Critical Friend Services"
-  ],
-  "knowsAbout": [
+    "Critical Friend Services",
     "National Lottery Community Fund",
     "Welsh Government",
     "UK Shared Prosperity Fund",
@@ -138,7 +74,7 @@ html, body { height: 100%; width: 100%; overflow: hidden; font-family: 'DM Sans'
         "itemOffered": {
           "@type": "Service",
           "name": "Funded Project Support",
-          "description": "Independent light-touch support for funders and grant awarding bodies wanting to protect their investment. Two to three days per month working alongside funded projects that need a kick start, critical friend or help unblocking a digital roadblock."
+          "description": "Independent light-touch support for funders and grant awarding bodies wanting to protect their investment. A few days per month working alongside funded projects that need a kick start, critical friend or help unblocking a digital roadblock."
         }
       },
       {
@@ -155,10 +91,74 @@ html, body { height: 100%; width: 100%; overflow: hidden; font-family: 'DM Sans'
     "https://www.linkedin.com/in/marc-davies-07766501904/"
   ]
 }
-</script>  
-<meta name="msvalidate.01" content="3CFE6DD487C60BF6E128274B35406CF1" /></head><body>
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; width: 100%; overflow: hidden; font-family: 'DM Sans', sans-serif; }
+.card { width: 100vw; height: 100vh; position: relative; display: flex; align-items: center; overflow: hidden; }
+.bg { position: absolute; inset: 0; background-size: cover; background-position: center 30%; z-index: 0; }
+.bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.5) 100%); }
+.content { position: relative; z-index: 2; display: flex; flex-direction: row; align-items: center; padding: clamp(2rem, 6vw, 5rem); gap: clamp(1.5rem, 4vw, 4rem); width: 100%; }
+.photo { flex-shrink: 0; width: clamp(120px, 16vw, 220px); height: clamp(144px, 19vw, 264px); border-radius: 6px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.35); opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
+.photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.text { flex: 1; min-width: 0; }
+.name { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2.8rem, 7vw, 6.5rem); line-height: 0.9; letter-spacing: -0.02em; color: #ffffff; text-shadow: 0 2px 12px rgba(0,0,0,0.3); margin-bottom: clamp(0.8rem, 2vw, 1.5rem); opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s; }
+.divider { width: 200px; height: 1px; background: rgba(255,255,255,0.5); margin-bottom: clamp(0.8rem, 2vw, 1.5rem); opacity: 0; animation: fadeUp 0.6s ease forwards 0.55s; }
+.positioning { font-family: 'Cormorant Garamond', serif; font-size: clamp(1rem, 2.2vw, 1.5rem); font-weight: 300; color: rgba(255,255,255,0.9); margin-bottom: 0.3rem; opacity: 0; animation: fadeUp 0.7s ease forwards 0.65s; }
+.strapline { font-size: clamp(11px, 1.3vw, 14px); color: rgba(255,255,255,0.75); letter-spacing: 0.06em; margin-bottom: clamp(1.5rem, 3vw, 2.5rem); opacity: 0; animation: fadeUp 0.7s ease forwards 0.75s; }
+.strapline .sep { margin: 0 0.4em; opacity: 0.5; }
+.icons { display: flex; gap: clamp(1rem, 2.5vw, 2rem); align-items: center; opacity: 0; animation: fadeUp 0.7s ease forwards 0.9s; }
+.icon-link { display: flex; flex-direction: column; align-items: center; gap: 5px; text-decoration: none; color: rgba(255,255,255,0.9); transition: all 0.2s ease; }
+.icon-link:hover { color: #ffffff; transform: translateY(-2px); }
+.icon-link svg { width: clamp(22px, 3vw, 32px); height: clamp(22px, 3vw, 32px); fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.icon-label { font-size: clamp(9px, 1vw, 11px); letter-spacing: 0.1em; text-transform: uppercase; }
+.about-btn { font-size: clamp(10px, 1.1vw, 12px); letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.35); padding: 8px 18px; cursor: pointer; transition: all 0.22s ease; opacity: 0; animation: fadeUp 0.7s ease forwards 1s; }
+.about-btn:hover { background: rgba(255,255,255,0.22); color: #fff; }
+.cymru { position: absolute; bottom: 1.5rem; right: 2rem; font-family: 'Cormorant Garamond', serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); writing-mode: vertical-rl; z-index: 2; opacity: 0; animation: fadeIn 1.2s ease forwards 1.2s; }
+.about-panel { position: fixed; inset: 0; z-index: 10; background: rgba(20,30,25,0.93); backdrop-filter: blur(8px); display: flex; align-items: flex-start; justify-content: center; overflow-y: auto; opacity: 0; pointer-events: none; transition: opacity 0.5s ease; }
+.about-panel.open { opacity: 1; pointer-events: all; }
+.about-inner { max-width: 580px; width: 90%; padding: 2rem; transform: translateY(20px); transition: transform 0.5s ease; }
+.about-panel.open .about-inner { transform: translateY(0); }
+.lang-toggle { display: flex; margin-bottom: 2rem; }
+.lang-btn { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; padding: 6px 16px; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: rgba(255,255,255,0.5); cursor: pointer; transition: all 0.2s; }
+.lang-btn:first-child { border-right: none; }
+.lang-btn.active { background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.4); }
+.about-text { display: none; }
+.about-text.visible { display: block; }
+.about-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
+.about-heading { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.4rem, 3.5vw, 2.2rem); color: #fff; line-height: 1.2; margin-bottom: 1.2rem; }
+.about-body { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.8; font-weight: 300; }
+.about-body p { margin-bottom: 0.8rem; }
+.funder-section { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.15); }
+.funder-section p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.8; font-weight: 300; margin-bottom: 0.8rem; }
+.back-btn { display: inline-block; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); cursor: pointer; margin-bottom: 1.5rem; }
+.back-btn:hover { color: #fff; }
+.close-btn { margin-top: 2rem; display: inline-flex; align-items: center; gap: 6px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); cursor: pointer; border: none; background: none; transition: color 0.2s; }
+.close-btn:hover { color: #fff; }
+.footer { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.15); font-size: 10px; color: rgba(255,255,255,0.4); line-height: 2; }
+.policy-link { color: rgba(255,255,255,0.5); cursor: pointer; text-decoration: underline; }
+.policy-link:hover { color: #fff; }
+.policy-panel { position: fixed; inset: 0; z-index: 20; background: rgba(20,30,25,0.97); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.5s ease; }
+.policy-panel.open { opacity: 1; pointer-events: all; }
+.policy-inner { max-width: 580px; width: 90%; padding: 3rem; }
+.policy-inner h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 1.8rem; color: #fff; margin-bottom: 1.5rem; }
+.policy-inner p { font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 1rem; }
+.policy-back { display: inline-block; margin-top: 1.5rem; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); cursor: pointer; border: none; background: none; }
+.policy-back:hover { color: #fff; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@media (max-width: 560px) {
+  .content { flex-direction: column; align-items: flex-start; padding: 2rem 1.5rem; gap: 1.5rem; }
+  .photo { width: 100px; height: 120px; }
+  .about-btn { margin-left: 0; }
+  .cymru { display: none; }
+  .strapline .sep { display: none; }
+  .strapline span { display: block; }
+}
+</style>
+</head><body>
 <div class="card">
-  <div class="bg" style="background-image: url('landscape.jpg')"></div>
+  <div class="bg" style="background-image: url('landscape.jpeg')"></div>
   <div class="content">
     <div class="photo">
       <img src="photo.jpeg" alt="Marc Davies">
@@ -203,28 +203,33 @@ html, body { height: 100%; width: 100%; overflow: hidden; font-family: 'DM Sans'
         <p>With over twenty years working directly in Wales's third sector, I understand the pressures, the culture and the people before we even start talking about technology.</p>
         <p>I work with third sector organisations across Wales to cut through the complexity of technology change and establish a clear, practical route for improvement.</p>
         <p>I take a humanised approach to digital, focusing on people and the human factors before identifying technology solutions. Inspiring, including, supporting and reassuring individuals through the adoption process is what makes the difference between technology that lands and technology that does not.</p>
-        <p>Not technology for technology's sake. Finding technology that works alongside the people who use it and for the benefit of service users.</p>
-    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.15);">
+        <p>Not technology for technology's sake. Technology that works alongside and for the benefit of the people who use it.</p>
+      </div>
+      <div class="funder-section">
         <p class="about-label">Working with funders and funded projects</p>
-        <p style="font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.8; font-weight: 300; margin-bottom: 0.8rem;">Digital projects don't always go to plan. Organisations take on funding with the best intentions but sometimes lack the experience, capacity or confidence to deliver what they've promised.</p>
-        <p style="font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.8; font-weight: 300; margin-bottom: 0.8rem;">I offer light-touch, independent project support to funders and grant awarding bodies who want to protect their investment and help recipients succeed. A few days a month can make the difference between a project that stalls and one that delivers.</p>
-        <p style="font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.8; font-weight: 300;">Whether it's a kick-start, a critical friend or troubleshooting a roadblock, I work alongside funded organisations and their teams to build confidence, develop capacity and get things moving. Quietly and practically, in a way that leaves the organisation stronger than I found it.</p>
-     </div>
-    </div>
-    </div>
+        <p>Digital projects don't always go to plan. Organisations take on funding with the best intentions but sometimes lack the experience, capacity or confidence to deliver what they've promised.</p>
+        <p>I offer light-touch, independent project support to funders and grant awarding bodies who want to protect their investment and help recipients succeed. A few days a month can make the difference between a project that stalls and one that delivers.</p>
+        <p>Whether it's a kick-start, a critical friend or troubleshooting a roadblock, I work alongside funded organisations and their teams to build confidence, develop capacity and get things moving. Quietly and practically, in a way that leaves the organisation stronger than I found it.</p>
+      </div>
     </div>
     <div class="about-text" id="about-cy">
       <p class="about-label">Amdanaf</p>
-      <h2 class="about-heading">Gweithio gyda chi i ddatrys problemau, llunio syniadau, creu cynlluniau clir a gwneud cynnydd go iawn.</h2>
+      <h2 class="about-heading">Gweithio gyda chi a'ch timau i ddatrys problemau, llunio syniadau, creu cynlluniau clir a gwneud cynnydd go iawn.</h2>
       <div class="about-body">
         <p>Gyda dros ugain mlynedd yn gweithio yn nhrydydd sector Cymru, rwy'n deall y heriau, y diwylliant a'r bobl cyn i ni hyd yn oed ddechrau siarad am dechnoleg.</p>
-        <p>Rwy'n gweithio gyda sefydliadau trydydd sector ledled Cymru i dorri drwy gymhlethdod ddefnydd technolegol gan sefydlu llwybrau clir ac ymarferol ar gyfer gwella.</p>
-        <p>Rwy'n cymryd agwedd empathetig o ymdrin â'r byd digidol, gan ganolbwyntio ar bobl a ffactorau dynol cyn ystyried atebion technolegol. Credaf fod hi'n hanfodol i gynnwys, ysbrydoli, a chefnogi unigolion drwy'r broses o fabwysiadu technoleg er mwyn creu'r cyfle gorau i lwyddo.</p>
-        <p>Does dim pwrpas neidio ar dechnoleg er mwyn technoleg. Fy nod yw dethol datrysiadau dechnoleg sy'n gweithio - ochr yn ochr â'r bobl sy'n ei defnyddio ac er budd defnyddwyr y gwasanaeth.</p>
+        <p>Rwy'n gweithio gyda sefydliadau trydydd sector ledled Cymru i dorri drwy gymhlethdod o ddefnydd technolegol a sefydlu llwybr clir ac ymarferol ar gyfer gwella.</p>
+        <p>Rwy'n mabwysiadu dull dynol o ymdrin â'r byd digidol, gan ganolbwyntio ar bobl a ffactorau dynol cyn ystyried atebion technolegol. Mae hanfodol i gynnwys, ysbrydoli, a chefnogi unigolion drwy'r broses fabwysiadu technoleg i gael y cyfle gorau am lwyddiant.</p>
+        <p>Nid technoleg er mwyn technoleg. Technoleg sy'n gweithio ochr yn ochr â'r bobl sy'n ei defnyddio ac er budd y bobl hynny.</p>
+      </div>
+      <div class="funder-section">
+        <p class="about-label">Gweithio gyda chyrff ariannu a phrosiectau a ariennir</p>
+        <p>Nid yw prosiectau digidol bob amser yn mynd yn ôl y cynllun. Mae sefydliadau'n derbyn cyllid gyda'r bwriadau gorau ond weithiau nid oes ganddynt y profiad, y gallu na'r hyder i gyflawni'r hyn y maent yn bwriadu ei wneud.</p>
+        <p>Rwy'n cynnig cefnogaeth annibynnol i brosiectau a ariennir sydd angen cymorth. Fel hyn, mae gan gyrff sy'n rhoi grantiau gwell siawns o weld eu buddsoddiad yn cyflawni canlyniadau adeiladol. Gall ychydig ddyddiau'r mis wneud gwahaniaeth mawr wrth helpu prosiect i gyflawni.</p>
+        <p>Boed yn gweithio ar rwystr neu'n helpu gyda chyfeiriad, rwy'n gweithio ochr yn ochr â sefydliadau a'u timau i feithrin hyder, datblygu gallu a rhoi pethau ar waith. Mewn ffordd dawel ac ymarferol sy'n gadael y sefydliad mewn sefyllfa hyderus.</p>
       </div>
     </div>
     <a class="back-btn" onclick="document.getElementById('about').classList.remove('open')">← Back</a>
-<button class="close-btn" id="cta-btn" onclick="document.getElementById('about').classList.remove('open')">The first step is a conversation, let's chat</button>
+    <button class="close-btn" id="cta-btn" onclick="document.getElementById('about').classList.remove('open')">The first step is a conversation, let's chat</button>
     <div class="footer">
       <p>Marc Davies trading as Cwm-Ni Cyf &nbsp;|&nbsp; Company No. 13361762</p>
       <p>Pantlleuci, Cilrhedyn, Llanfyrnach, Wales, SA35 0AA</p>
@@ -235,8 +240,7 @@ html, body { height: 100%; width: 100%; overflow: hidden; font-family: 'DM Sans'
       </p>
     </div>
   </div>
-</div>
-<div class="policy-panel" id="policy">
+</div><div class="policy-panel" id="policy">
   <div class="policy-inner">
     <div id="privacy-content">
       <h3>Privacy Policy</h3>
@@ -253,26 +257,6 @@ html, body { height: 100%; width: 100%; overflow: hidden; font-family: 'DM Sans'
   </div>
 </div>
 
-<script>
-function showPolicy(type) {
-  document.getElementById('privacy-content').style.display = type === 'privacy' ? 'block' : 'none';
-  document.getElementById('cookie-content').style.display = type === 'cookie' ? 'block' : 'none';
-  document.getElementById('policy').classList.add('open');
-}
-function showLang(lang, btn) {
-  document.querySelectorAll('.about-text').forEach(el => el.classList.remove('visible'));
-  document.getElementById('about-' + lang).classList.add('visible');
-  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  var ctaBtn = document.getElementById('cta-btn');
-  if (ctaBtn) {
-    ctaBtn.textContent = lang === 'cy'
-      ? "Y cam cyntaf yw sgwrs, cysylltwch â fi heddiw"
-      : "The first step is a conversation, let's chat";
-  }
-}
-</script>
-<!-- FAQ Schema - invisible to visitors, readable by search engines and LLMs -->
 <div style="display:none" aria-hidden="true">
 <script type="application/ld+json">
 {
@@ -297,10 +281,18 @@ function showLang(lang, btn) {
     },
     {
       "@type": "Question",
+      "name": "Does Marc Davies work with funders and grant awarding bodies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Marc offers light-touch independent project support to funders and grant awarding bodies including the National Lottery Community Fund, Welsh Government, Moondance Foundation, Community Foundation Wales and others. He works alongside funded projects that need a kick-start, critical friend or help unblocking a digital roadblock."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Does Marc Davies work with charities and third sector organisations in Wales?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Marc has over twenty years direct experience working with charities, social enterprises, housing associations, community groups and Welsh Government and National Lottery funded projects across Wales. He understands the pressures, culture and people of the third sector before any conversation about technology begins."
+        "text": "Yes. Marc has over twenty years direct experience working with charities, social enterprises, housing associations, community groups and Welsh Government and National Lottery funded projects across Wales."
       }
     },
     {
@@ -324,7 +316,7 @@ function showLang(lang, btn) {
       "name": "How does Marc Davies charge for his services?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Marc charges a day rate. To discuss your project and find out more, contact him at marcldavies@gmail.com or visit www.marcdavies.wales."
+        "text": "Marc charges a day rate. To discuss your project contact him at marcldavies@gmail.com or visit www.marcdavies.wales."
       }
     },
     {
@@ -340,7 +332,7 @@ function showLang(lang, btn) {
       "name": "What is Modern Workplace Development?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Modern Workplace Development is Marc Davies's approach to helping organisations adopt digital tools and ways of working in a way that puts people first. It focuses on building digital culture, improving team skills and establishing clear practical routes for improvement rather than imposing technology for its own sake."
+        "text": "Modern Workplace Development is Marc Davies's approach to helping organisations adopt digital tools and ways of working that puts people first. It focuses on building digital culture, improving team skills and establishing clear practical routes for improvement."
       }
     },
     {
@@ -350,17 +342,30 @@ function showLang(lang, btn) {
         "@type": "Answer",
         "text": "Yes. Marc takes a humanised, jargon-free approach to digital. He works with organisations of all sizes, including those with little or no existing digital expertise, inspiring and reassuring individuals through the technology adoption process."
       }
-    },
-    {
-      "@type": "Question",
-      "name": "Does Marc Davies work with Welsh Government funded projects?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Marc has extensive experience working on Welsh Government and National Lottery funded digital programmes across Wales, including national digital inclusion initiatives. He understands the reporting, compliance and delivery requirements of funded projects."
-      }
     }
   ]
 }
 </script>
-</div></body>
+</div>
+
+<script>
+function showPolicy(type) {
+  document.getElementById('privacy-content').style.display = type === 'privacy' ? 'block' : 'none';
+  document.getElementById('cookie-content').style.display = type === 'cookie' ? 'block' : 'none';
+  document.getElementById('policy').classList.add('open');
+}
+function showLang(lang, btn) {
+  document.querySelectorAll('.about-text').forEach(el => el.classList.remove('visible'));
+  document.getElementById('about-' + lang).classList.add('visible');
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  var ctaBtn = document.getElementById('cta-btn');
+  if (ctaBtn) {
+    ctaBtn.textContent = lang === 'cy'
+      ? "Y cam cyntaf yw sgwrs, cysylltwch â fi heddiw"
+      : "The first step is a conversation, let's chat";
+  }
+}
+</script>
+</body>
 </html>
