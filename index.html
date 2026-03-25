@@ -144,7 +144,16 @@ html, body { height: 100%; width: 100%; overflow: hidden; font-family: 'DM Sans'
 .policy-inner h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 1.8rem; color: #fff; margin-bottom: 1.5rem; }
 .policy-inner p { font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 1rem; }
 .policy-back { display: inline-block; margin-top: 1.5rem; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); cursor: pointer; border: none; background: none; }
-.policy-back:hover { color: #fff; }
+.policy-back:hover { color: #fff; }.eyebrow { 
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(0.7rem, 1.2vw, 0.85rem); 
+  text-transform: uppercase; 
+  letter-spacing: 0.18em; 
+  color: rgba(255,255,255,0.75); 
+  margin-bottom: 0.4rem; 
+  opacity: 0; 
+  animation: fadeUp 0.8s ease forwards 0.3s;
+}
 @keyframes fadeUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @media (max-width: 560px) {
@@ -154,6 +163,7 @@ html, body { height: 100%; width: 100%; overflow: hidden; font-family: 'DM Sans'
   .cymru { display: none; }
   .strapline .sep { display: none; }
   .strapline span { display: block; }
+.eyebrow { font-size: 10px; margin-bottom: 0.2rem; line-height: 1.4; }
 }
 </style>
 </head><body>
@@ -168,9 +178,7 @@ html, body { height: 100%; width: 100%; overflow: hidden; font-family: 'DM Sans'
 
   <h1 class="name">Marc Davies</h1>
   <div class="divider"></div>
-  <p class="positioning">Modern Workplace Development</p>
-      <div class="divider"></div>
-      <p class="positioning">Modern Workplace Development</p>
+        <p class="positioning">Modern Workplace Development</p>
       <p class="strapline">
         <span>Clear thinking</span><span class="sep">·</span>
         <span>Practical ideas</span><span class="sep">·</span>
