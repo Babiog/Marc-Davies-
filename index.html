@@ -19,9 +19,7 @@
   "url": "https://www.marcdavies.wales",
   "jobTitle": "Digital Development Partner",
   "worksFor": {
-    "@type": "Organization",
-    "name": "Cwm-Ni Cyf",
-    "alternateName": "Marc Davies Consulting"
+    "@id": "https://www.marcdavies.wales/#organization"
   },
   "address": {
     "@type": "PostalAddress",
@@ -366,7 +364,23 @@ html, body { height: 100%; width: 100%; overflow: hidden; font-family: 'DM Sans'
   ]
 }
 </script>
-</div>
+</div><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.marcdavies.wales/#organization",
+  "name": "Cwm-Ni Cyf",
+  "alternateName": "Marc Davies Consulting",
+  "url": "https://www.marcdavies.wales",
+  "logo": "https://www.marcdavies.wales/photo.jpeg",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Pembrokeshire",
+    "addressRegion": "Wales",
+    "addressCountry": "GB"
+  }
+}
+</script>
 <script>
 function showPolicy(type) {
   document.getElementById('privacy-content').style.display = type === 'privacy' ? 'block' : 'none';
