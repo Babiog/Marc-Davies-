@@ -5,78 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marc Davies | Digital Development Partner</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Marc Davies",
-      "url": "https://www.marcdavies.wales",
-      "jobTitle": "Digital Development Partner",
-      "knowsLanguage": [{ "@type": "Language", "name": "Welsh" }, { "@type": "Language", "name": "English" }],
-      "description": "Independent Digital Development Partner for the Welsh third sector."
-    }
-    </script>
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html, body { height: 100%; width: 100%; overflow-x: hidden; font-family: 'DM Sans', sans-serif; background: #1a1a1a; color: #fff; }
+        html, body { height: 100%; width: 100%; overflow: hidden; font-family: 'DM Sans', sans-serif; background: #000; }
         .card { width: 100vw; height: 100vh; position: relative; display: flex; align-items: center; overflow: hidden; }
-        .bg { position: absolute; inset: 0; background-image: url('landscape.jpg'); background-size: cover; background-position: center; z-index: 0; }
+        .bg { position: absolute; inset: 0; background-size: cover; background-position: center 30%; z-index: 0; }
         .bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7)); }
-        .content { position: relative; z-index: 2; display: flex; flex-direction: row; align-items: center; padding: 5%; gap: 4rem; width: 100%; }
-        .photo { flex-shrink: 0; width: 200px; height: 250px; border-radius: 6px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); opacity: 0; animation: fUp 0.8s forwards 0.2s; }
+        .content { position: relative; z-index: 2; display: flex; flex-direction: row; align-items: center; padding: clamp(2rem, 6vw, 5rem); gap: clamp(1.5rem, 4vw, 4rem); width: 100%; }
+        .photo { flex-shrink: 0; width: clamp(120px, 16vw, 220px); height: clamp(144px, 19vw, 264px); border-radius: 6px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.35); opacity: 0; animation: fUp 0.8s forwards 0.2s; }
         .photo img { width: 100%; height: 100%; object-fit: cover; }
-        .text { flex: 1; }
-        .eyebrow { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(255,255,255,0.7); margin-bottom: 0.5rem; opacity: 0; animation: fUp 0.8s forwards 0.3s; }
-        .name { font-family: 'Cormorant+Garamond', serif; font-size: clamp(3rem, 8vw, 6rem); line-height: 1; margin-bottom: 1rem; opacity: 0; animation: fUp 0.8s forwards 0.4s; }
-        .divider { width: 150px; height: 1px; background: #fff; margin-bottom: 1.5rem; opacity: 0; animation: fUp 0.8s forwards 0.5s; }
-        .positioning { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; opacity: 0; animation: fUp 0.8s forwards 0.6s; }
-        .strapline { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 2rem; opacity: 0; animation: fUp 0.8s forwards 0.7s; }
-        .icons { display: flex; gap: 2rem; margin-bottom: 2rem; opacity: 0; animation: fUp 0.8s forwards 0.8s; }
-        .icon-link { color: #fff; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; text-align: center; }
-        .about-btn { background: rgba(255,255,255,0.1); border: 1px solid #fff; color: #fff; padding: 10px 20px; cursor: pointer; text-transform: uppercase; opacity: 0; animation: fUp 0.8s forwards 1s; }
-        .about-panel { position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,0.95); display: none; padding: 10%; overflow-y: auto; }
-        .about-panel.open { display: block; }
-        .lang-btn { background: none; border: 1px solid #fff; color: #fff; padding: 5px 10px; margin-right: 10px; cursor: pointer; }
-        .about-text { display: none; margin-top: 2rem; line-height: 1.6; }
-        .about-text.visible { display: block; }
-        @keyframes fUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        @media (max-width: 768px) { .content { flex-direction: column; text-align: center; } .divider { margin: 0 auto 1.5rem; } }
+        .text { flex: 1; min-width: 0; }
+        .eyebrow { font-size: clamp(0.7rem, 1.2vw, 0.85rem); text-transform: uppercase; letter-spacing: 0.18em; color: rgba(255,255,255,0.75); margin-bottom: 0.4rem; opacity: 0; animation: fUp 0.8s forwards 0.3s; }
+        .name { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2.8rem, 7vw, 6.5rem); line-height: 0.9; color: #fff; margin-bottom: 1rem; opacity: 0; animation: fUp 0.8s forwards 0.4s; }
+        .divider { width: 200px; height: 1px; background: rgba(255,255,255,0.5); margin-bottom: 1.5rem; opacity: 0; animation: fUp 0.6s forwards 0.5s; }
+        .positioning { font-size: clamp(0.9rem, 1.8vw, 1.2rem); text-transform: uppercase; letter-spacing: 0.15em; color: rgba(255,255,255,0.9); margin-bottom: 0.3rem; opacity: 0; animation: fUp 0.7s forwards 0.6s; }
+        .strapline { font-size: clamp(11px, 1.3vw, 14px); color: rgba(255,255,255,0.75); margin-bottom: 2rem; opacity: 0; animation: fUp 0.7s forwards 0.7s; }
+        .icons { display: flex; gap: clamp(1.5rem, 3vw, 3rem); align-items: center; opacity: 0; animation: fUp 0.7s forwards 0.9s; }
+        .icon-link { display: flex; flex-direction: column; align-items: center; gap: 8px; text-decoration: none; color: rgba(255,255,255,0.8); transition: 0.2s; }
+        .icon-link:hover { color: #fff; transform: translateY(-2px); }
+        .icon-link svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+        .icon-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; }
+        @keyframes fUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 600px) { .content { flex-direction: column; align-items: flex-start; } }
     </style>
 </head>
 <body>
     <div class="card">
-        <div class="bg"></div>
+        <div class="bg" style="background-image: url('landscape.jpg');"></div>
         <div class="content">
-            <div class="photo"><img src="your-photo.jpg" alt="Marc Davies"></div>
+            <div class="photo"><img src="photo.jpg" alt="Marc Davies"></div>
             <div class="text">
-                <p class="eyebrow">Support for project sponsors across Wales</p>
+                <p class="eyebrow">Hands-on support for project sponsors and delivery teams across Wales</p>
                 <h1 class="name">Marc Davies</h1>
                 <div class="divider"></div>
                 <p class="positioning">Digital Development Partner</p>
                 <p class="strapline">Clear thinking · Practical ideas · Real progress</p>
                 <div class="icons">
-                    <a href="mailto:marcldavies@gmail.com" class="icon-link">Email</a>
-                    <a href="https://linkedin.com/in/marc-davies-07766501904/" class="icon-link">LinkedIn</a>
+                    <a href="mailto:marcldavies@gmail.com" class="icon-link">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <span class="icon-label">Email</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/marc-davies-07766501904/" class="icon-link">
+                        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        <span class="icon-label">LinkedIn</span>
+                    </a>
+                    <a href="https://wa.me/447766501904" class="icon-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-11.7 1 1 0 0 1 .1 0 1 1 0 0 1 .1 0 8.5 8.5 0 0 1 8.3 7.9z"></path></svg>
+                        <span class="icon-label">WhatsApp</span>
+                    </a>
                 </div>
-                <button class="about-btn" onclick="toggleAbout(true)">About me</button>
             </div>
         </div>
     </div>
-    <div id="aboutPanel" class="about-panel">
-        <button onclick="toggleAbout(false)" style="color:#fff; background:none; border:none; cursor:pointer;">← BACK</button>
-        <div style="margin-top:2rem;">
-            <button class="lang-btn" onclick="setL('en')">English</button>
-            <button class="lang-btn" onclick="setL('cy')">Cymraeg</button>
-        </div>
-        <div id="en" class="about-text visible"><h2>About</h2><p>20 years experience in the Welsh third sector...</p></div>
-        <div id="cy" class="about-text"><h2>Amdanaf</h2><p>Dros 20 mlynedd o brofiad yn nhrydydd sector Cymru...</p></div>
-    </div>
-    <script>
-        function toggleAbout(show) { document.getElementById('aboutPanel').classList.toggle('open', show); }
-        function setL(l) { 
-            document.getElementById('en').classList.toggle('visible', l === 'en');
-            document.getElementById('cy').classList.toggle('visible', l === 'cy');
-        }
-    </script>
 </body>
 </html>
