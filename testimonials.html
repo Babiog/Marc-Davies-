@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +7,53 @@
 <meta name="description" content="What clients say about working with Marc Davies, Wales-based freelance digital transformation consultant supporting charities and third sector organisations.">
 <link rel="canonical" href="https://www.marcdavies.wales/testimonials.html">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "Review",
+      "position": 1,
+      "reviewBody": "Marc has been great to work with; open, warm and insightful. He's really helped us improve the Charity Digital Skills Report and made sure our work is relevant to charities and community groups in Wales.",
+      "author": {
+        "@type": "Person",
+        "name": "Nissa Ramsay",
+        "jobTitle": "Digital Consultant",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Think Social Tech",
+          "url": "https://thinksocialtech.org"
+        }
+      },
+      "itemReviewed": {
+        "@type": "Person",
+        "name": "Marc Davies",
+        "url": "https://www.marcdavies.wales"
+      }
+    },
+    {
+      "@type": "Review",
+      "position": 2,
+      "reviewBody": "I have worked with Marc since 2002 and he is dynamic, insightful and a great ambassador for and knowledgeable about all things Digital. Marc has a can-do attitude and always stays ahead of the game in terms of emerging trends. He is collaborative and a great team player, his style is energetic, supportive, and motivational.",
+      "author": {
+        "@type": "Person",
+        "name": "Kevin Harrington",
+        "jobTitle": "Business Development Manager",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Antur Cymru Enterprise"
+        }
+      },
+      "itemReviewed": {
+        "@type": "Person",
+        "name": "Marc Davies",
+        "url": "https://www.marcdavies.wales"
+      }
+    }
+  ]
+}
+</script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { min-height: 100%; width: 100%; font-family: 'DM Sans', sans-serif; }
@@ -22,14 +68,15 @@ html, body { min-height: 100%; width: 100%; font-family: 'DM Sans', sans-serif; 
 .page-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
 .page-heading { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.4rem, 3.5vw, 2.2rem); color: #fff; line-height: 1.2; margin-bottom: 1.5rem; }
 .divider { width: 200px; height: 1px; background: rgba(255,255,255,0.3); margin-bottom: 2rem; }
-.testimonial { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.testimonial { margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
 .testimonial:last-of-type { border-bottom: none; }
-.quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(1rem, 2vw, 1.2rem); font-weight: 300; color: rgba(255,255,255,0.9); line-height: 1.7; font-style: italic; margin-bottom: 1rem; }
+.quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 300; color: rgba(255,255,255,0.92); line-height: 1.75; font-style: italic; margin-bottom: 1.2rem; }
 .quote::before { content: '\201C'; }
 .quote::after { content: '\201D'; }
-.attribution { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
-.attribution strong { color: rgba(255,255,255,0.7); font-weight: 400; }
-.placeholder { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.8; font-style: italic; font-weight: 300; padding: 2rem; border: 1px dashed rgba(255,255,255,0.15); text-align: center; }
+.attribution { font-size: 12px; letter-spacing: 0.08em; color: rgba(255,255,255,0.5); line-height: 1.8; }
+.attribution strong { display: block; color: rgba(255,255,255,0.8); font-weight: 500; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2px; }
+.attribution a { color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+.attribution a:hover { color: rgba(255,255,255,0.8); }
 .cta { display: inline-flex; align-items: center; gap: 8px; margin-top: 2rem; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.35); padding: 10px 20px; text-decoration: none; transition: all 0.22s ease; }
 .cta:hover { background: rgba(255,255,255,0.22); color: #fff; }
 .footer { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.15); font-size: 10px; color: rgba(255,255,255,0.4); line-height: 2; }
@@ -42,39 +89,33 @@ html, body { min-height: 100%; width: 100%; font-family: 'DM Sans', sans-serif; 
 <div class="card">
   <div class="bg"></div>
   <div class="content">
-
     <nav class="nav">
       <a href="index.html">Home</a>
       <span class="nav-sep">/</span>
       <a href="testimonials.html">Testimonials</a>
     </nav>
-
     <p class="page-label">Testimonials</p>
     <h1 class="page-heading">What clients say about working with Marc.</h1>
     <div class="divider"></div>
-
-    <!-- Add testimonials below. Copy and paste the block for each new one. -->
-
-    <div class="placeholder">
-      Testimonials coming soon.
-    </div>
-
-    <!-- Testimonial template (remove the comment tags to activate):
-
     <div class="testimonial">
-      <p class="quote">Your testimonial text goes here.</p>
-      <p class="attribution"><strong>Name, Job Title</strong> &nbsp;|&nbsp; Organisation, Wales</p>
+      <p class="quote">Marc has been great to work with; open, warm and insightful. He's really helped us improve the Charity Digital Skills Report and made sure our work is relevant to charities and community groups in Wales.</p>
+      <p class="attribution">
+        <strong>Nissa Ramsay</strong>
+        Digital Consultant &nbsp;|&nbsp; <a href="https://thinksocialtech.org" target="_blank">Think Social Tech</a>
+      </p>
     </div>
-
-    -->
-
+    <div class="testimonial">
+      <p class="quote">I have worked with Marc since 2002 and he is dynamic, insightful and a great ambassador for and knowledgeable about all things Digital. Marc has a can-do attitude and always stays ahead of the game in terms of emerging trends. He is collaborative and a great team player, his style is energetic, supportive, and motivational.</p>
+      <p class="attribution">
+        <strong>Kevin Harrington</strong>
+        Rheolwr Datblygu Busnes / Business Development Manager &nbsp;|&nbsp; Antur Cymru Enterprise
+      </p>
+    </div>
     <a class="cta" href="mailto:marcldavies@gmail.com">The first step is a conversation, let's chat</a>
-
     <div class="footer">
       <p>Marc Davies trading as Cwm-Ni Cyf &nbsp;|&nbsp; Company No. 13361762</p>
       <p>Pantlleuci, Cilrhedyn, Llanfyrnach, Wales, SA35 0AA</p>
     </div>
-
   </div>
   <span class="cymru">Cymru &nbsp; Wales</span>
 </div>
